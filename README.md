@@ -2,6 +2,8 @@
 
 Lab Data Parser is a fast, native toolkit for parsing, analyzing, and visualizing laboratory chromatography (HPLC) and mass spectrometry (mzML) data. Written entirely in Rust, it provides a unified data model with both a CLI and an interactive GUI.
 
+![Lab Data Parser screenshot](assets/screenshot.png)
+
 ## Features
 
 - **Multi-format parsing:** Supports HPLC CSV/TXT and mzML/mzXML formats.
@@ -37,4 +39,5 @@ cargo build --release -p lab-data-parser-cli
 6. Use the **Export as** buttons (or the File menu) to save your results to CSV, JSON, XLSX, or PNG.
 
 ## License
-MIT License
+
+Dual-licensed under [MIT](LICENSE-MIT) or [Apache-2.0](LICENSE-APACHE), at your option.
