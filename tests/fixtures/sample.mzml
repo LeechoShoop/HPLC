@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mzML xmlns="http://psi.hupo.org/ms/mzml" version="1.1.0">
+  <run id="run1">
+    <spectrumList count="1">
+      <spectrum index="0" id="scan=1" defaultArrayLength="3">
+        <binaryDataArrayList count="2">
+          <binaryDataArray encodedLength="16">
+            <cvParam cvRef="MS" accession="MS:1000514" name="m/z array" value=""/>
+            <cvParam cvRef="MS" accession="MS:1000521" name="32-bit float" value=""/>
+            <cvParam cvRef="MS" accession="MS:1000576" name="no compression" value=""/>
+            <!-- 2.0, 3.0, 3.0 in little endian 32-bit float -->
+            <binary>AAAAQAAAQEAAAEBA</binary>
+          </binaryDataArray>
+          <binaryDataArray encodedLength="16">
+            <cvParam cvRef="MS" accession="MS:1000515" name="intensity array" value=""/>
+            <cvParam cvRef="MS" accession="MS:1000521" name="32-bit float" value=""/>
+            <cvParam cvRef="MS" accession="MS:1000576" name="no compression" value=""/>
+            <!-- 2.0, 3.0, 3.0 in little endian 32-bit float -->
+            <binary>AAAAQAAAQEAAAEBA</binary>
+          </binaryDataArray>
+        </binaryDataArrayList>
+      </spectrum>
+    </spectrumList>
+  </run>
+</mzML>

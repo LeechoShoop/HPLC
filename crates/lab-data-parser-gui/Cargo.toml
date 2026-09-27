@@ -1,0 +1,17 @@
+[package]
+name = "lab-data-parser-gui"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "lab-data-parser-gui"
+path = "src/main.rs"
+
+[dependencies]
+lab-data-parser-core = { path = "../lab-data-parser-core" }
+eframe  = "0.31"
+egui    = "0.31"
+anyhow  = "1"
+serde_json = "1"
+rfd     = "0.15"
+egui_plot = "0.31"

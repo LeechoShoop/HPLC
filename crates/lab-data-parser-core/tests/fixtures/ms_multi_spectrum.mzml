@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Synthetic mzML fixture for lab_parser integration tests.
+
+  Contains 3 spectra forming a TIC curve with one prominent peak:
+    spectrum 0 (scan=1): m/z 100-300, baseline intensities (10-12 AU)
+    spectrum 1 (scan=2): m/z 100-300, elevated intensities (100-9000 AU) — the peak
+    spectrum 2 (scan=3): m/z 100-300, baseline intensities (10-12 AU)
+
+  Binary arrays are 32-bit float, uncompressed for m/z values and
+  64-bit float, uncompressed for intensity values.
+
+  All values are little-endian IEEE-754. Base64 strings were generated with:
+    struct.pack('<f', v) for f32 / struct.pack('<d', v) for f64
+-->
+<mzML xmlns="http://psi.hupo.org/ms/mzml" version="1.1.0">
+  <instrumentConfigurationList count="1">
+    <instrumentConfiguration id="IC1">
+      <cvParam cvRef="MS" accession="MS:1000031" name="Orbitrap Exploris 480" value=""/>
+      <cvParam cvRef="MS" accession="MS:1000026" name="Orbitrap" value=""/>
+    </instrumentConfiguration>
+  </instrumentConfigurationList>
+  <run id="synth-run-01" startTimeStamp="2026-09-20T09:00:00Z">
+    <spectrumList count="3" defaultDataProcessingRef="dp1">
+
+      <!-- Spectrum 0: scan=1, baseline (m/z 100,150,200,250,300 @ intensity 10,8,12,9,11) -->
+      <spectrum index="0" id="scan=1" defaultArrayLength="5">
+        <cvParam cvRef="MS" accession="MS:1000511" name="ms level" value="1"/>
+        <binaryDataArrayList count="2">
+          <binaryDataArray encodedLength="28">
+            <cvParam cvRef="MS" accession="MS:1000514" name="m/z array" value=""/>
+            <cvParam cvRef="MS" accession="MS:1000521" name="32-bit float" value=""/>
+            <cvParam cvRef="MS" accession="MS:1000576" name="no compression" value=""/>
+            <!-- 100.0, 150.0, 200.0, 250.0, 300.0 as LE f32 -->
+            <binary>AADIQgAAFkMAAEhDAAB6QwAAlkM=</binary>
+          </binaryDataArray>
+          <binaryDataArray encodedLength="44">
+            <cvParam cvRef="MS" accession="MS:1000515" name="intensity array" value=""/>
+            <cvParam cvRef="MS" accession="MS:1000523" name="64-bit float" value=""/>
+            <cvParam cvRef="MS" accession="MS:1000576" name="no compression" value=""/>
+            <!-- 10.0, 8.0, 12.0, 9.0, 11.0 as LE f64 -->
+            <binary>AAAAAAAAJEAAAAAAAAAgQAAAAAAAAChAAAAAAAAAIkAAAAAAAAAmQA==</binary>
+          </binaryDataArray>
+        </binaryDataArrayList>
+      </spectrum>
+
+      <!-- Spectrum 1: scan=2, PEAK (m/z 100,150,200,250,300 @ intensity 100,500,9000,500,100) -->
+      <spectrum index="1" id="scan=2" defaultArrayLength="5">
+        <cvParam cvRef="MS" accession="MS:1000511" name="ms level" value="1"/>
+        <binaryDataArrayList count="2">
+          <binaryDataArray encodedLength="28">
+            <cvParam cvRef="MS" accession="MS:1000514" name="m/z array" value=""/>
+            <cvParam cvRef="MS" accession="MS:1000521" name="32-bit float" value=""/>
+            <cvParam cvRef="MS" accession="MS:1000576" name="no compression" value=""/>
+            <!-- 100.0, 150.0, 200.0, 250.0, 300.0 as LE f32 -->
+            <binary>AADIQgAAFkMAAEhDAAB6QwAAlkM=</binary>
+          </binaryDataArray>
+          <binaryDataArray encodedLength="44">
+            <cvParam cvRef="MS" accession="MS:1000515" name="intensity array" value=""/>
+            <cvParam cvRef="MS" accession="MS:1000523" name="64-bit float" value=""/>
+            <cvParam cvRef="MS" accession="MS:1000576" name="no compression" value=""/>
+            <!-- 100.0, 500.0, 9000.0, 500.0, 100.0 as LE f64 -->
+            <binary>AAAAAAAAWUAAAAAAAEB/QAAAAAAAlMFAAAAAAABAf0AAAAAAAABZQA==</binary>
+          </binaryDataArray>
+        </binaryDataArrayList>
+      </spectrum>
+
+      <!-- Spectrum 2: scan=3, baseline (m/z 100,150,200,250,300 @ intensity 10,8,12,9,11) -->
+      <spectrum index="2" id="scan=3" defaultArrayLength="5">
+        <cvParam cvRef="MS" accession="MS:1000511" name="ms level" value="1"/>
+        <binaryDataArrayList count="2">
+          <binaryDataArray encodedLength="28">
+            <cvParam cvRef="MS" accession="MS:1000514" name="m/z array" value=""/>
+            <cvParam cvRef="MS" accession="MS:1000521" name="32-bit float" value=""/>
+            <cvParam cvRef="MS" accession="MS:1000576" name="no compression" value=""/>
+            <!-- 100.0, 150.0, 200.0, 250.0, 300.0 as LE f32 -->
+            <binary>AADIQgAAFkMAAEhDAAB6QwAAlkM=</binary>
+          </binaryDataArray>
+          <binaryDataArray encodedLength="44">
+            <cvParam cvRef="MS" accession="MS:1000515" name="intensity array" value=""/>
+            <cvParam cvRef="MS" accession="MS:1000523" name="64-bit float" value=""/>
+            <cvParam cvRef="MS" accession="MS:1000576" name="no compression" value=""/>
+            <!-- 10.0, 8.0, 12.0, 9.0, 11.0 as LE f64 -->
+            <binary>AAAAAAAAJEAAAAAAAAAgQAAAAAAAAChAAAAAAAAAIkAAAAAAAAAmQA==</binary>
+          </binaryDataArray>
+        </binaryDataArrayList>
+      </spectrum>
+
+    </spectrumList>
+  </run>
+</mzML>

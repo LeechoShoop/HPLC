@@ -1,0 +1,20 @@
+[Header]
+Instrument: Test LC
+Method: test.m
+Sample ID: test-01
+Date: 2026-09-25
+Detector: UV
+
+[Data]
+Time,Value
+0.0, 1.0
+0.1, 1.0
+0.2, 1.0
+0.3, 10.0
+0.4, 50.0
+0.5, 100.0
+0.6, 50.0
+0.7, 10.0
+0.8, 1.0
+0.9, 1.0
+1.0, 1.0
